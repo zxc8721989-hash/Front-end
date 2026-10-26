@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>貨比三家 — PChome DEMO</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <h1>貨比三家</h1>
+    <p>PChome 商品搜尋 DEMO</p>
+    <form id="searchForm" class="search-box">
+      <input id="searchInput" type="search" placeholder="請輸入商品名稱（例如：滑鼠）" aria-label="商品名稱" required maxlength="80">
+      <button id="searchBtn" type="submit">搜尋 PChome</button>
+    </form>
+    <p>每次最多抓取 100 頁，可用頁數不足時會提早停止。每頁間隔約 1 秒，加上連線時間，搜尋可能需要數分鐘，請耐心等候。價格以 PChome 搜尋結果為準。</p>
+    <section aria-label="資料庫搜尋紀錄">
+      <button id="historyBtn" type="button">查看資料庫紀錄</button>
+      <select id="historySelect" aria-label="選擇歷史搜尋紀錄"><option value="">請先載入紀錄</option></select>
+      <button id="loadHistoryBtn" type="button">顯示這次紀錄</button>
+      <p id="historyStatus" role="status"></p>
+    </section>
+    <p id="status" role="status">請輸入關鍵字，搜尋即時商品資料。</p>
+    <div id="results" aria-live="polite"></div>
+    <nav id="pagination" aria-label="商品分頁" hidden>
+      <button id="prevPage" type="button">上一頁</button>
+      <span id="pageInfo" role="status" style="color:white"></span>
+      <button id="nextPage" type="button">下一頁</button>
+    </nav>
+  </main>
+</body>
+</html>
